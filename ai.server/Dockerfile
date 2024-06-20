@@ -3,7 +3,7 @@ ARG BUILD_FROM
 
 FROM ${BUILD_FROM}
 
-ARG S6_OVERLAY_VERSION=3.1.5.0
+ARG S6_OVERLAY_VERSION=3.2.0.0
 ARG TARGETARCH
 ARG BUILD_ARCH=${TARGETARCH}
 RUN \
@@ -41,11 +41,11 @@ ADD --link rootfs /
 
 ENV CONFIG_PATH=/data/options.json
 LABEL \
-  io.hass.version="2.5.1" \
+  io.hass.version="2.6.5" \
   io.hass.type="addon" \
   io.hass.arch="aarch64|amd64"
 
-ADD --link https://github.com/hassio-addons/bashio/archive/v0.14.3.tar.gz /tmp/bashio.tar.gz
+ADD --link https://github.com/hassio-addons/bashio/archive/v0.16.2.tar.gz /tmp/bashio.tar.gz
 RUN mkdir -p /tmp/bashio \
     && tar zxvf \
         /tmp/bashio.tar.gz \
