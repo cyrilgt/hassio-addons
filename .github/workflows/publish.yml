@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
         matrix:
-          target: ['ai.server', 'double-take', 'double-take-beta']
+          target: ['ai.server', 'double-take']
         fail-fast: false
     steps:
       - name: Free disk space
@@ -25,7 +25,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.TOKEN }}
       - name: Build
         uses: home-assistant/builder@master
         with:
