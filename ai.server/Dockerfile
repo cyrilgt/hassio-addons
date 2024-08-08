@@ -2,6 +2,7 @@
 ARG BUILD_FROM
 
 FROM ${BUILD_FROM}
+LABEL org.opencontainers.image.source="https://github.com/Aaper/hassio-addons"
 
 ARG S6_OVERLAY_VERSION=3.2.0.0
 ARG TARGETARCH
